@@ -20,7 +20,7 @@ def read_root():
 
 @app.post("/books/",response_model=schemas.Book)
 def create_book(book:schemas.BookCreate,db:Session=Depends(get_db)):
-    new_book = models.Book(**book.dit())
+    new_book = models.Book(**book.dict())
     db.add(new_book)
     db.commit()
     db.refresh(new_book)
