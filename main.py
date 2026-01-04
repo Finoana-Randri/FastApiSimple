@@ -13,7 +13,7 @@ def get_db():
         yield db
     finally:
         db.close()
-  
+  #test
 @app.get("/")
 def read_root():
     return {"message": "Hello World"}
